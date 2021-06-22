@@ -4,9 +4,9 @@ var currentlyPlaying = null;
 
 const SPACE = "&nbsp;"
 
-var updateN = 0;
-var blockedSongs = [];
-var updateTime = 0;
+var updateN = 0,
+    blockedSongs = [],
+    updateTime = 0;
 
 function getCurrentlyPlaying() {
   return new Promise((res, rej) => {

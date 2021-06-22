@@ -1,22 +1,77 @@
 {
   "name": "spotify-blocker",
   "version": "1.0.0",
-  "description": "",
-  "main": "./src/app.js",
-  "scripts": {
-    "test": "electron ."
-  },
+  "license": "MIT",
+  "description": "A program to block songs on Spotify.",
   "author": "jaideng1",
-  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaideng1/spotify-blocker/issues",
+    "email": "jaidng1@gmail.com"
+  },
+  "main": "./src/app.js",
+  "homepage": "./",
+  "scripts": {
+    "test": "electron .",
+    "start": "npm install && electron .",
+    "pack": "./node_modules/.bin/electron-builder build --dir",
+    "dist": "./node_modules/.bin/electron-builder build",
+    "dist-all-platforms": "./node_modules/.bin/electron-builder build -mwl",
+    "dist-mw": "./node_modules/.bin/electron-builder build -mw",
+    "dist-ml": "./node_modules/.bin/electron-builder build -ml",
+    "dist-wl": "./node_modules/.bin/electron-builder build -wl"
+  },
+  "build": {
+    "productName": "Spotify Blocker",
+    "appId": "spotifyblocker",
+    "directories": {
+      "buildResources": "build"
+    },
+    "files": [
+      "./build/**/*",
+      "./src/app.js",
+      "./node_modules/**/*",
+      "./package.json",
+      "./src/*",
+      "./src/**/*",
+      "./src/***/**/*"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "./build/icon.ico"
+    }
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "btoa": "^1.2.1",
+    "colors": "^1.0.3",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
+    "electron-builder-squirrel-windows": "^22.11.7",
     "express": "^4.17.1",
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "electron": "^13.1.0"
+    "electron": "^13.1.0",
+    "electron-builder": "^22.11.7"
   }
 }
