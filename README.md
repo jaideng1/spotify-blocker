@@ -17,4 +17,6 @@ After, run `npm install` in CMD or Terminal inside the directory to install the 
 
 Then to run it, run `npm test`.
 
-i will eventally finish it, but i haven't had the time lately, so i'll do it sooner or later.
+i will eventally finish it, but i haven't had the time lately, so i'll do it sooner or later.  
+
+sorry for any confusion!
